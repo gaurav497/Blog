@@ -1,0 +1,22 @@
+<%-include("partials/header.ejs") %>
+<div class="single-article-heading">
+<h1><%= head1 %></h1>
+</div>
+<div class="single-article-body">
+<p><%= article1 %></p>
+</div>
+<div class="edit">
+    <h1></h1>
+    <form method="post" action="/edit-submit">
+        <label  for="article">Choose a article:</label>
+        
+          
+        <input type="text" name="updated" value="<%=posts1[input].body%>"> 
+      
+        <input name="editSubmit" value="Edit" type="submit">
+        <input name="deleteSubmit"value="Delete" type="submit">
+
+    </form> 
+</div>
+
+<%-include("partials/footer.ejs") %>
