@@ -8,13 +8,13 @@
 <div class="edit">
     <h1></h1>
     <form method="post" action="/edit-submit">
-        <label  for="article">Choose a article:</label>
+        <label class="form-label" for="article">Choose a article:</label>
         
           
-        <input type="text" name="updated" value="<%=posts1[input].body%>"> 
+        <input class="form-control artform" type="text" name="updated" value="<%=posts1[input].body%>"> 
       
-        <input name="editSubmit" value="Edit" type="submit">
-        <input name="deleteSubmit"value="Delete" type="submit">
+        <input class="btn btn-warning btn-lg" name="editSubmit" value="Edit" type="submit">
+        <input class="btn btn-warning btn-lg" name="deleteSubmit"value="Delete" type="submit">
 
     </form> 
 </div>

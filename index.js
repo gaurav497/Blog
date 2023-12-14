@@ -2,18 +2,16 @@ import express from "express";
 import bodyParser from "body-parser";
 const port=3000;
 const app=express();
-
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(express.static("public"));
-
 app.get("/",(req,res)=>{
     res.render("index.ejs");
 });
-
 function Poster(head,body){
     this.head=head;
     this.body=body;
 }
+
 var posts=[];
 let i=0;
 app.post("/submit",(req,res)=>{
@@ -24,15 +22,10 @@ app.post("/submit",(req,res)=>{
     });
     
 });
-
-var head1;
-var article1;
 var x;
 app.post('/article-submit',(req,res)=>{
-        x=req.body.which;
-        console.log(x);
-       
-        res.render("articles.ejs",{
+        x=req.body.which;       
+res.render("articles.ejs",{
             input:x,
             posts1:posts,
             head1:posts[x].head,

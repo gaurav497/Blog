@@ -1,36 +1,49 @@
 <%-include("partials/header.ejs") %>
 <div class="bg">
-    <h1>Write your article your own article</h1>
-    <form method="post" action="/submit">
-        <label for="heading">heading</label>
-        <input type="text" name="heading"><br>
-        <label for="article">Article</label>
-        <input type="text" name="body" id="" style="height: 100px;"><br>
-        <input type="submit">
-    </form>
-  </div>
-  <div class="articles">
-    <h3>Article</h3>
-    <div class="article-part">
-        <div class="card">
-            <img src="/a1.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-                
-                <form method="post" action="/article-submit">
-                    <label for="article">Choose a article:</label>
-                    <select id="cars" name="which">
-                        <% if(locals.posts){ %>
-                            <% for(var i=0; i<posts.length; i++){ %>
-                        <option value="<%=i%>"> <%=posts[i].head%></option>
-                            <% } %>
-                         <% } %>
-                      </select>
-                    <input type="submit">
-                </form>                                                       
+    <div class="row">
+        <div class="col colart">
+            <h1>Write your article your own article</h1>
+            <form method="post" action="/submit" class="mb-3">
+                <div class="part1">
+                <label class="form-label" for="heading">heading</label>
+                <input class="form-control" type="text" name="heading">
             </div>
-          </div>
+            <div class="part2">
+                <label class="form-label" for="article">Article</label>
+                <textarea class="form-control" type="text" name="body"></textarea>
+            </div>
+                <input class="btn btn-warning btn-lg" type="submit">
+            </form>
+        </div>
+        <div class="col colart2">
+            <div class="articles">
+                <h3>Article</h3>
+                <div class="article-part">
+                    <div class="card">
+                        <img src="/a1.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            
+                            <form method="post" action="/article-submit">
+                                <label class="form-label" for="article">Choose an article</label>
+                                <select class="form-select" id="cars" name="which">
+                                    <% if(locals.posts){ %>
+                                        <% for(var i=0; i<posts.length; i++){ %>
+                                    <option value="<%=i%>"> <%=posts[i].head%></option>
+                                        <% } %>
+                                     <% } %>
+                                  </select>
+                                <input class="btn btn-warning btn-lg" type="submit">
+                            </form>                                                       
+                        </div>
+                      </div>
+                </div>
+              </div>
+        </div>
     </div>
+    
+
   </div>
+  
 <%-include("partials/footer.ejs") %>
 
     
